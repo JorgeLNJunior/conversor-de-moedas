@@ -3,14 +3,16 @@ import { AxiosError } from 'axios'
 import { onBeforeMount, reactive, ref } from 'vue'
 import CurrencyApi from '../api/Currency.api'
 import MoneyIcon from './icons/MoneyIcon.vue'
+import LoadingIcon from './icons/LoadingIcon.vue'
 
 const api = new CurrencyApi()
 
 const style = reactive({
-  isBtnDisabled: false
+  isBtnDisabled: false,
+  isLoading: false
 })
 
-const convertionResult = ref('0.00')
+let convertionResult = ref<string>('0.00')
 
 const ammount = reactive({
   value: 272.45,
@@ -45,7 +47,15 @@ onBeforeMount(async () => await setConversionResult())
 
 async function setConversionResult() {
   try {
-    const response = await api.last(ammount.from.code, ammount.to.code)
+    style.isLoading = true
+    style.isBtnDisabled = true
+
+    const response = await api
+      .last(ammount.from.code, ammount.to.code)
+      .finally(() => {
+        style.isLoading = false
+        style.isBtnDisabled = false
+      })
 
     convertionResult.value = new Intl.NumberFormat(undefined, {
       style: 'currency',
@@ -129,11 +139,14 @@ async function setConversionResult() {
       <!-- Convert button -->
       <div class="flex justify-center">
         <button
-          :disabled="style.isBtnDisabled"
-          :class="{ 'cursor-not-allowed': style.isBtnDisabled }"
+          :disabled="style.isBtnDisabled || style.isLoading"
+          :class="{
+            'cursor-not-allowed': style.isBtnDisabled || style.isLoading
+          }"
           class="w-full md:w-1/2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-md px-5 py-2.5 text-center"
         >
-          Converter
+          <LoadingIcon v-if="style.isLoading" />
+          <span v-else>Converter</span>
         </button>
       </div>
     </form>
