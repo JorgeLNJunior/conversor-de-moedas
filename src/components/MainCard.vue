@@ -2,7 +2,7 @@
 import { AxiosError } from 'axios'
 import { onBeforeMount, reactive, ref } from 'vue'
 import CurrencyApi from '../api/Currency.api'
-import MoneyIcon from './MoneyIcon.vue'
+import MoneyIcon from './icons/MoneyIcon.vue'
 
 const api = new CurrencyApi()
 
