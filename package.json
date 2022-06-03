@@ -17,6 +17,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "vue": "^3.2.25"
   },
   "devDependencies": {
