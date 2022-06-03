@@ -17,6 +17,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['vue', '@typescript-eslint', 'prettier'],
+  ignorePatterns: ['*.html'],
   rules: {
     'vue/html-indent': 'error',
     'prettier/prettier': [
