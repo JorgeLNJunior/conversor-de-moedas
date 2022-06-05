@@ -1,24 +1,29 @@
 import { Currency } from '../types/Currency.interface'
 
-export const currencyData = {
+export const currencyData: CurrencyData = {
   from: [
-    { name: 'Dólar Americano', code: 'USD' },
-    { name: 'Euro', code: 'EUR' },
-    { name: 'Real Brasileiro', code: 'BRL' }
-  ] as Currency[],
+    { code: 'BRL', name: 'Real Brasileiro' },
+    { code: 'EUR', name: 'Euro' },
+    { code: 'USD', name: 'Dólar Americano' }
+  ],
   to: [
-    { name: 'Boliviano', code: 'BOB' },
-    { name: 'Dólar Americano', code: 'USD' },
-    { name: 'Dólar Australiano', code: 'AUD' },
-    { name: 'Dólar Canadense', code: 'CAD' },
-    { name: 'Iene Japonês', code: 'JPY' },
-    { name: 'Euro', code: 'EUR' },
-    { name: 'Peso Argentino', code: 'ARS' },
-    { name: 'Peso Chileno', code: 'CLP' },
-    { name: 'Peso Colombiano', code: 'COP' },
-    { name: 'Peso Uruguaio', code: 'UYU' },
-    { name: 'Real Brasileiro', code: 'BRL' },
-    { name: 'Yuan Chinês', code: 'CNY' },
-    { name: 'Won Sul-Coreano', code: 'KRW' }
-  ] as Currency[]
+    { code: 'ARS', name: 'Peso Argentino' },
+    { code: 'AUD', name: 'Dólar Australiano' },
+    { code: 'BOB', name: 'Boliviano' },
+    { code: 'BRL', name: 'Real Brasileiro' },
+    { code: 'CAD', name: 'Dólar Canadense' },
+    { code: 'CLP', name: 'Peso Chileno' },
+    { code: 'CNY', name: 'Yuan Chinês' },
+    { code: 'COP', name: 'Peso Colombiano' },
+    { code: 'EUR', name: 'Euro' },
+    { code: 'JPY', name: 'Iene Japonês' },
+    { code: 'KRW', name: 'Won Sul-Coreano' },
+    { code: 'USD', name: 'Dólar Americano' },
+    { code: 'UYU', name: 'Peso Uruguaio' }
+  ]
+}
+
+interface CurrencyData {
+  from: Currency[]
+  to: Currency[]
 }
