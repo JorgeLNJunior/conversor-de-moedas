@@ -2,11 +2,12 @@
 import CurrencyApi from '../api/Currency.api'
 import LoadingIcon from './icons/LoadingIcon.vue'
 import MoneyIcon from './icons/MoneyIcon.vue'
+import PageLoader from './loaders/PageLoader.vue'
 
 import { AxiosError } from 'axios'
+import { Currency } from '../types/Currency.interface'
 import { currencyData } from '../data/Currency.data'
 import { onBeforeMount, reactive, ref, watch } from 'vue'
-import { Currency } from '../types/Currency.interface'
 
 const api = new CurrencyApi()
 
@@ -63,8 +64,10 @@ async function setConversionResult() {
 </script>
 
 <template>
+  <!-- only load the component when the first api call have ended -->
+  <PageLoader v-if="Number(convertionResult) === 0" class="pt-20" />
   <!-- Card -->
-  <div class="p-4 w-2/3 rounded-lg border border-gray-200 shadow-md">
+  <div v-else class="p-4 w-2/3 rounded-lg border border-gray-200 shadow-md">
     <h5 class="text-center text-xl text-gray-900 font-medium">Converter</h5>
     <div class="bg-gray-100 h-0.5 rounded-lg my-2"></div>
     <form class="space-y-6" @submit.prevent="setConversionResult()">
