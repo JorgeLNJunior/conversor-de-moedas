@@ -5,7 +5,6 @@ import MoneyIcon from './icons/MoneyIcon.vue'
 import PageLoader from './loaders/PageLoader.vue'
 
 import { AxiosError } from 'axios'
-import { Currency } from '../types/Currency.interface'
 import { currencyData } from '../data/Currency.data'
 import { onBeforeMount, reactive, ref, watch } from 'vue'
 
@@ -20,8 +19,8 @@ let convertionResult = ref<string>('0.00')
 
 const ammount = reactive({
   value: 272.45,
-  from: { name: 'Real Brasileiro', code: 'BRL' } as Currency,
-  to: { name: 'Dólar Americano', code: 'USD' } as Currency
+  from: currencyData.from[0],
+  to: currencyData.to[11] || currencyData.to[0] // American Dollar (index 11) or index 0 to prevent undefined values.
 })
 
 const options = reactive(currencyData)
@@ -126,7 +125,7 @@ async function setConversionResult() {
       <div class="text-center">
         <span class="text-gray-900 font-medium">{{ convertionResult }}</span>
       </div>
-      <!-- Convert button -->
+      <!-- Convert Button -->
       <div class="flex justify-center">
         <button
           :disabled="style.isBtnDisabled || style.isLoading"
