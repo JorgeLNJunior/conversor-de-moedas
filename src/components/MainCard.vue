@@ -5,7 +5,7 @@ import MoneyIcon from './icons/MoneyIcon.vue'
 
 import { AxiosError } from 'axios'
 import { currencyData } from '../data/Currency.data'
-import { onBeforeMount, reactive, ref } from 'vue'
+import { onBeforeMount, reactive, ref, watch } from 'vue'
 import { Currency } from '../types/Currency.interface'
 
 const api = new CurrencyApi()
@@ -26,6 +26,10 @@ const ammount = reactive({
 const options = reactive(currencyData)
 
 onBeforeMount(async () => await setConversionResult())
+
+watch(ammount, () => {
+  style.isBtnDisabled = ammount.from.code === ammount.to.code
+})
 
 async function setConversionResult() {
   try {
@@ -59,6 +63,7 @@ async function setConversionResult() {
 </script>
 
 <template>
+  <!-- Card -->
   <div class="p-4 w-2/3 rounded-lg border border-gray-200 shadow-md">
     <h5 class="text-center text-xl text-gray-900 font-medium">Converter</h5>
     <div class="bg-gray-100 h-0.5 rounded-lg my-2"></div>
@@ -122,10 +127,7 @@ async function setConversionResult() {
       <div class="flex justify-center">
         <button
           :disabled="style.isBtnDisabled || style.isLoading"
-          :class="{
-            'cursor-not-allowed': style.isBtnDisabled || style.isLoading
-          }"
-          class="w-full md:w-1/2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-md px-5 py-2.5 text-center"
+          class="disabled:cursor-not-allowed disabled:opacity-70 disabled:bg-red-600 disabled:hover:bg-red-600 w-full md:w-1/2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium leading-tight text-md text-center rounded-lg px-5 py-2.5 transition duration-300"
         >
           <LoadingIcon v-if="style.isLoading" />
           <span v-else>Converter</span>
