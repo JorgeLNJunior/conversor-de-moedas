@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { AxiosError } from 'axios'
-import { onBeforeMount, reactive, ref } from 'vue'
 import CurrencyApi from '../api/Currency.api'
-import MoneyIcon from './icons/MoneyIcon.vue'
 import LoadingIcon from './icons/LoadingIcon.vue'
+import MoneyIcon from './icons/MoneyIcon.vue'
+
+import { AxiosError } from 'axios'
+import { currencyData } from '../data/Currency.data'
+import { onBeforeMount, reactive, ref } from 'vue'
+import { Currency } from '../types/Currency.interface'
 
 const api = new CurrencyApi()
 
@@ -16,32 +19,11 @@ let convertionResult = ref<string>('0.00')
 
 const ammount = reactive({
   value: 272.45,
-  from: { name: 'Real Brasileiro', code: 'BRL' },
-  to: { name: 'Dólar Americano', code: 'USD' }
+  from: { name: 'Real Brasileiro', code: 'BRL' } as Currency,
+  to: { name: 'Dólar Americano', code: 'USD' } as Currency
 })
 
-const options = reactive({
-  from: [
-    { name: 'Dólar Americano', code: 'USD' },
-    { name: 'Euro', code: 'EUR' },
-    { name: 'Real Brasileiro', code: 'BRL' }
-  ],
-  to: [
-    { name: 'Boliviano', code: 'BOB' },
-    { name: 'Dólar Americano', code: 'USD' },
-    { name: 'Dólar Australiano', code: 'AUD' },
-    { name: 'Dólar Canadense', code: 'CAD' },
-    { name: 'Iene Japonês', code: 'JPY' },
-    { name: 'Euro', code: 'EUR' },
-    { name: 'Peso Argentino', code: 'ARS' },
-    { name: 'Peso Chileno', code: 'CLP' },
-    { name: 'Peso Colombiano', code: 'COP' },
-    { name: 'Peso Uruguaio', code: 'UYU' },
-    { name: 'Real Brasileiro', code: 'BRL' },
-    { name: 'Yuan Chinês', code: 'CNY' },
-    { name: 'Won Sul-Coreano', code: 'KRW' }
-  ]
-})
+const options = reactive(currencyData)
 
 onBeforeMount(async () => await setConversionResult())
 
