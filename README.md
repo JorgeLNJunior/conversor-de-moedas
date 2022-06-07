@@ -1,16 +1,67 @@
-# Vue 3 + TypeScript + Vite
+<div align="center" id="short-description-and-logo">
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+  <!-- Logo -->
+  <img src="src/assets/logo.png" width="200px"> 
 
-## Recommended IDE Setup
+  <!-- Título -->
+  <h1>Conversor de Moedas</h1>
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+  Conversor de moedas construído com Vue + Tailwind CSS.
 
-## Type Support For `.vue` Imports in TS
+</div>
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+<!-- Badges -->
+<div align="center" id="badges">
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+  [![CI](https://img.shields.io/github/workflow/status/JorgeLNJunior/conversor-de-moedas/CI/main)](https://github.com/JorgeLNJunior/conversor-de-moedas/actions/workflows/ci.yml)
+  [![Coverage Status](https://coveralls.io/repos/github/JorgeLNJunior/conversor-de-moedas/badge.svg?branch=main)](https://coveralls.io/github/JorgeLNJunior/conversor-de-moedas?branch=main)
+  [![License](https://img.shields.io/github/license/JorgeLNJunior/readme-template?color=lgreen)](LICENSE)
+  [![Release](https://img.shields.io/github/v/release/JorgeLNJunior/conversor-de-moedas?color=lgreen)](https://github.com/JorgeLNJunior/conversor-de-moedas/releases)
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+</div>
+
+<div align="center">
+
+  [APP](https://conversor-de-moedas-delta.vercel.app/) |
+  [Repo](https://github.com/JorgeLNJunior/conversor-de-moedas)
+
+  Aplicacão para conversão de moedas contruída com Vue 3 e Tailwind CSS. O projeto foi construído com a intenção de praticar e melhorar minhas habilidade em front end.
+
+</div>
+
+## Tabela de Conteúdos
+
+- [Tecnologias](#tecnologias)
+- [Instalação e Configuração](#instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o)
+  - [Requisitos](#requisitos)
+  - [Instalação](#instala%C3%A7%C3%A3o)
+- [Licença](#licen%C3%A7a)
+
+## Tecnologias
+
+Este projeto foi construído com as seguintes tecnologias:
+
+- [Node.js »](https://nodejs.org)
+- [Typescript »](https://www.typescriptlang.org)
+- [Vitest »](https://vitest.dev)
+- [Vite »](https://vitejs.dev)
+- [Tailwind CSS »](https://tailwindcss.com)
+- [GitHub Actions »](https://github.com/features/actions)
+
+## Instalação e configuração
+
+### Requisitos
+
+- [Node.js »](https://nodejs.org/en/download) na sua versão LTS
+
+### Instalação
+
+Escreva aqui os processos para rodar o projeto.
+
+1. Clone o projeto: `https://github.com/JorgeLNJunior/conversor-de-moedas.git`.
+2. Instale as dependências: `npm install`
+3. Execute a aplicação: `npm run dev`
+
+## Licença
+
+Projeto sob a licença [MIT »](/LICENSE.md)
