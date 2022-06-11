@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import CurrencyApi from '../api/Currency.api'
-import LoadingIcon from './icons/LoadingIcon.vue'
-import MoneyIcon from './icons/MoneyIcon.vue'
-import PageLoader from './loaders/PageLoader.vue'
+import CurrencyApi from '@api/Currency.api'
+import LoadingIcon from '@components/icons/LoadingIcon.vue'
+import MoneyIcon from '@components/icons/MoneyIcon.vue'
+import PageLoader from '@components/loaders/PageLoader.vue'
+import { currencyData } from '../data/Currency.data'
 
 import { AxiosError } from 'axios'
-import { currencyData } from '../data/Currency.data'
 import { onBeforeMount, reactive, ref, watch } from 'vue'
 
 const api = new CurrencyApi()

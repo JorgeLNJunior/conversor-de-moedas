@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
-import MainCard from './components/MainCard.vue'
+import NavBar from '@components/NavBar.vue'
+import MainCard from '@components/MainCard.vue'
 </script>
 
 <template>
