@@ -1,0 +1,22 @@
+{
+    "git": {
+      "commitMessage": "chore: atualizar para v${version}",
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p -l false && git add CHANGELOG.md"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "Release v${version}"
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+}
+  
