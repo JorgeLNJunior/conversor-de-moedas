@@ -30,7 +30,7 @@ export interface LastResponse {
   varBid: string
   bid: string
   ask: string
-  pctChance: string
+  pctChange: string
   timestamp: string
   create_date: string
 }
