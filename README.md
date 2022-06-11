@@ -14,7 +14,6 @@
 <div align="center" id="badges">
 
   [![CI](https://img.shields.io/github/workflow/status/JorgeLNJunior/conversor-de-moedas/CI/main)](https://github.com/JorgeLNJunior/conversor-de-moedas/actions/workflows/ci.yml)
-  [![Coverage Status](https://coveralls.io/repos/github/JorgeLNJunior/conversor-de-moedas/badge.svg?branch=main)](https://coveralls.io/github/JorgeLNJunior/conversor-de-moedas?branch=main)
   [![License](https://img.shields.io/github/license/JorgeLNJunior/readme-template?color=lgreen)](LICENSE)
   [![Release](https://img.shields.io/github/v/release/JorgeLNJunior/conversor-de-moedas?color=lgreen)](https://github.com/JorgeLNJunior/conversor-de-moedas/releases)
 
@@ -43,7 +42,6 @@ Este projeto foi construído com as seguintes tecnologias:
 
 - [Node.js »](https://nodejs.org)
 - [Typescript »](https://www.typescriptlang.org)
-- [Vitest »](https://vitest.dev)
 - [Vite »](https://vitejs.dev)
 - [Tailwind CSS »](https://tailwindcss.com)
 - [GitHub Actions »](https://github.com/features/actions)
