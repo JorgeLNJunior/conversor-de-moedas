@@ -1,9 +1,20 @@
+<script setup lang="ts">
+import { onBeforeMount, ref } from 'vue'
+
+const theme = ref<'light' | 'dark'>('light')
+
+onBeforeMount(() => {
+  theme.value = localStorage.theme
+})
+</script>
+
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
-    style="fill: rgba(58, 57, 57, 1); transform: ; msfilter: "
+    class="fill-slate-600 dark:fill-slate-300"
+    style="transform: ; msfilter: "
   >
     <path
       d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 11a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3V9a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v6z"
