@@ -12,7 +12,7 @@ import ThemeSwitch from '@components/utils/ThemeSwitch.vue'
         <span
           class="self-center text-xl font-semibold whitespace-nowrap dark:text-gray-200"
         >
-          Conversor de moedas
+          Conversor de Moedas
         </span>
       </a>
       <div>
