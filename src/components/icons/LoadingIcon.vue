@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <svg
     role="status"
