@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CurrencyApi from '@api/Currency.api'
+import { CurrencyApi } from '@api/Currency.api'
 import LoadingIcon from '@components/icons/LoadingIcon.vue'
 import MoneyIcon from '@components/icons/MoneyIcon.vue'
 import PageLoader from '@components/loaders/PageLoader.vue'
